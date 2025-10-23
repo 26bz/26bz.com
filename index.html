@@ -15,6 +15,7 @@
     <meta name="twitter:title" content="26BZ | Developer" />
     <meta name="twitter:description" content="Developer building web apps, templates, and open source projects." />
     <meta name="twitter:image" content="https://26bz.online/assets/images/preview.png" />
+    <link rel="preload" as="image" href="/assets/images/pfp.png" fetchpriority="high" />
 
     <style>
       * { margin:0; padding:0; box-sizing:border-box; }
@@ -53,35 +54,42 @@
         transition:background 0.2s ease;
       }
       .links-grid a:hover { background:#222; }
+      a:focus-visible {
+        outline:2px solid #fff; outline-offset:4px;
+      }
       .stats {
         display:flex; justify-content:center; gap:12px;
         font-size:12px; color:#aaa; margin-top:4px;
       }
-      @media(max-width:600px){
-        body { padding:10px; }
-        .card { padding:20px; }
-        h1 { font-size:22px; }
-        .role { font-size:13px; }
-        .about { font-size:13px; }
-        .contact-grid { grid-template-columns:1fr; gap:12px; }
+      @media (prefers-reduced-motion: reduce) {
+        * { transition:none !important; animation-duration:0.01ms !important; animation-iteration-count:1 !important; }
+      }
+      @media(max-width:640px){
+        body { padding:14px; }
+        .card { padding:22px; border-radius:10px; }
+        h1 { font-size:24px; }
+        .role { font-size:13.5px; }
+        .about { font-size:13.5px; line-height:1.6; }
+        .contact-grid { grid-template-columns:1fr; gap:18px; }
         .links-grid { grid-template-columns:1fr; }
-        .stats { flex-direction:column; align-items:center; gap:4px; font-size:11px; }
+        .links-grid a { padding:14px; }
+        .stats { flex-direction:column; align-items:flex-start; gap:6px; font-size:11.5px; text-align:left; }
       }
     </style>
   </head>
   <body>
-    <div class="card">
+    <main class="card" aria-labelledby="profile-heading" aria-describedby="profile-about">
       <a href="/" aria-label="26BZ Website" class="avatar">
-        <img src="/assets/images/pfp.png" alt="26BZ" />
+        <img src="/assets/images/pfp.png" alt="26BZ" width="128" height="128" decoding="async" fetchpriority="high" />
       </a>
 
-      <h1>26BZ</h1>
+      <h1 id="profile-heading">26BZ</h1>
       <div class="role">Developing custom solutions</div>
-      <div class="about">
+      <div class="about" id="profile-about">
         I build web apps, whmcs modules, discord bots, and custom software. I've spent the last two years in my closet working with javascript, whmcs integrations, managing pterodactyl game servers, and handling linux server management. im always open to working on something new and exciting.
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-grid" aria-label="Contact channels">
         <div class="contact">
           <div class="contact-label">Email (Preferred)</div>
           <div class="contact-value"><a href="mailto:contact@26bz.online">contact@26bz.online</a></div>
@@ -102,17 +110,17 @@
 
       <div class="section">
         <h2>Markets I sell on</h2>
-        <div class="links-grid">
-          <a href="https://builtbybit.com/creators/26bz.473255" target="_blank">BuiltByBit</a>
-          <a href="https://www.sourcexchange.net/teams/1708/profile" target="_blank">SourceXChange</a>
-        </div>
-        <div class="stats">
+        <nav class="links-grid" aria-label="Marketplace profiles">
+          <a href="https://builtbybit.com/creators/26bz.473255" target="_blank" rel="noopener noreferrer">BuiltByBit</a>
+          <a href="https://www.sourcexchange.net/teams/1708/profile" target="_blank" rel="noopener noreferrer">SourceXChange</a>
+        </nav>
+        <div class="stats" aria-label="Business metrics">
           <span>2+ years experience</span>
           <span>17 Resources</span>
           <span>Over 209 Purchases</span>
           <span>More than 1,625 downloads</span>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
