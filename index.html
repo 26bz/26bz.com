@@ -7,7 +7,7 @@
   <title>26BZ | Developer</title>
   <meta name="description"
     content="26BZ – Developer building clean, functional web apps, hosting templates, and open source software." />
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/assets/images/pfp.jpg" type="image/x-icon" />
   <meta property="og:title" content="26BZ | Developer" />
   <meta property="og:description" content="Developer building web apps, templates, and open source projects." />
   <meta property="og:type" content="website" />
@@ -17,14 +17,17 @@
   <meta name="twitter:title" content="26BZ | Developer" />
   <meta name="twitter:description" content="Developer building web apps, templates, and open source projects." />
   <meta name="twitter:image" content="https://26bz.com/assets/images/preview.png" />
-  <link rel="preload" as="image" href="/assets/images/pfp.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/images/pfp.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/main.css" />
 </head>
 
 <body>
-  <main class="card" aria-labelledby="profile-heading" aria-describedby="profile-about">
+  <a href="#profile-main" class="skip-link">Skip to content</a>
+  <main id="profile-main" class="card" aria-labelledby="profile-heading" aria-describedby="profile-about">
     <a href="/" aria-label="26BZ Website" class="avatar">
-      <img src="/assets/images/pfp.png" alt="26BZ" width="128" height="128" decoding="async" fetchpriority="high" />
+      <img src="/assets/images/pfp.jpg" alt="Portrait of 26BZ" width="128" height="128" decoding="async"
+        fetchpriority="high" />
     </a>
 
     <h1 id="profile-heading">26BZ</h1>
@@ -36,159 +39,29 @@
       working on something new and challenging.
     </div>
 
-    <div class="contact-grid" aria-label="Contact channels">
-      <div class="contact">
+    <ul class="contact-grid" aria-label="Contact channels">
+      <li class="contact">
         <div class="contact-label">Email (Preferred)</div>
         <div class="contact-value">
           <a href="mailto:26bz@proton.me">26bz@proton.me</a>
         </div>
-      </div>
+      </li>
 
-      <div class="contact">
+      <li class="contact">
         <div class="contact-label">Discord</div>
         <div class="contact-value">
           <a href="https://26bz.com/discord">26bz.com/discord</a>
         </div>
-      </div>
+      </li>
 
-      <div class="contact">
+      <li class="contact">
         <div class="contact-label">GitHub</div>
         <div class="contact-value">
           <a href="https://github.com/26bz">github.com/26bz</a>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </main>
 </body>
 
 </html>
-
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, sans-serif;
-    background: #000;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .card {
-    background: #000;
-    padding: 32px;
-    width: 700px;
-    max-width: 100%;
-  }
-
-  .avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-
-  .avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  h1 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .role {
-    color: #aaa;
-    font-size: 15px;
-    margin-bottom: 24px;
-  }
-
-  .about {
-    margin-bottom: 24px;
-    font-size: 14px;
-    color: #ddd;
-    line-height: 1.6;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .contact-label {
-    color: #666;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
-  }
-
-  .contact-value a {
-    font-size: 14px;
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .contact-value a:hover {
-    opacity: 0.7;
-  }
-
-  a:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 4px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-    }
-  }
-
-  @media (max-width: 640px) {
-    body {
-      padding: 14px;
-    }
-
-    .card {
-      padding: 22px;
-    }
-
-    h1 {
-      font-size: 24px;
-    }
-
-    .role,
-    .about {
-      font-size: 13.5px;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-  }
-</style>
