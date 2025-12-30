@@ -144,3 +144,27 @@ a:focus-visible {
     gap: 18px;
   }
 }
+
+.heading-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.heading-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.heading-text h1 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+.heading-text .role {
+  margin: 0;
+}
